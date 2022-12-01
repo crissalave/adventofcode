@@ -1,0 +1,19 @@
+#!/bin/bash
+
+DAY=$1
+YEAR=$(date +%Y)
+
+if [[ DAY -lt 10 ]]; then
+  PREFIX=0
+fi
+
+P1="$YEAR"/$PREFIX"$DAY"-1.c
+P2="$YEAR"/$PREFIX"$DAY"-2.c
+INPUT="$YEAR"/$PREFIX"$DAY"-input
+
+if [[ -f "$P1" || -f "$P2" || -f "$INPUT" ]]; then
+  echo "Puzzle files already exist!"
+  exit 1
+fi
+
+touch $P1 $P2 $INPUT
