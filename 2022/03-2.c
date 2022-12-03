@@ -65,23 +65,17 @@ char *findCommon(char *s1, char *s2, char *s3) {
     if (s1 == NULL || s2 == NULL || s3 == NULL) return NULL;
 
     char *p = NULL;
-    char *buf1;
-    char *buf2;
+    char *buf;
 
     while (*s1) {
-        buf1 = strchr(s2, *s1);
-        if (buf1 != NULL) {
-            // after finded first ocurrence, now search it in s3
-            buf2 = strchr(s3, *buf1);
-            if (buf2 != NULL) {
-                p = buf1;
-                return p;
-            }
+        buf = strchr(s2, *s1);
+        if (buf) {
+            if (strchr(s3, *buf)) return buf;
             s1++;
             continue;
         }
         s1++;
     }
 
-    return p;
+    return NULL;
 }
