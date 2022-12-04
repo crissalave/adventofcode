@@ -7,8 +7,8 @@ if [[ DAY -lt 10 ]]; then
   PREFIX=0
 fi
 
-P1="$YEAR"/$PREFIX"$DAY"-1.c
-P2="$YEAR"/$PREFIX"$DAY"-2.c
+P1="$YEAR"/$PREFIX"$DAY"-1.py
+P2="$YEAR"/$PREFIX"$DAY"-2.py
 INPUT="$YEAR"/$PREFIX"$DAY"-input
 
 if [[ -f "$P1" || -f "$P2" || -f "$INPUT" ]]; then
